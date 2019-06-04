@@ -1,4 +1,4 @@
-Subject: Sporočilo z naslovom "$subject$" na $list$@$domain$ zavrnjeno
+Subject: Zavrnjeno sporočilo z naslovom "$subject$" na $list$@$domain$
 MIME-Version: 1.0
 Content-Type: multipart/mixed;
  boundary="=_$random0$$random1$_="
@@ -13,7 +13,7 @@ Content-Transfer-Encoding: 8bit
 %wrap%Sporočila z <$posteraddr$> z naslovom "$subject$" ni bilo mogoče
 dostaviti na poštni seznam,
 %ifreason maxmailsize%
-  ker presega največjo dovoljeno velikost $maxmailsize$ zlogov.
+  ker presega največjo dovoljeno velikost $maxmailsize$ bajtov.
 %endif%
 %ifreason tocc%
   ker nobeno od polj To: ali Cc: ne vsebuje naslova poštnega seznama.
@@ -35,7 +35,7 @@ dostaviti na poštni seznam,
     naslov <$list+$owner@$domain$>
   %endif%
 
-    %^%%wrap%Če menite, da ste med naročniki seznama, ste morda nanj
+    %^%%wrap%Če menite, da ste naročnik seznama, ste morda nanj
     prijavljeni z drugim elektronskim naslovom. Da to preverite, poglejte v
     pozdravno sporočilo, ki ste ga prijeli ob prijavi, ali pa v vsebino
     polja "Return-Path" v glavi kakega od sporočil, ki ste jih prejeli s

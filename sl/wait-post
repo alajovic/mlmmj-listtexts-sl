@@ -16,10 +16,10 @@ Content-Transfer-Encoding: 8bit
   je razprava na tem poštnem seznamu moderirana.
 %endif%
 %ifreason access%
-  tako zahtevajo pravila za dostopanje.
+  tako zahtevajo pravila dostopanja.
 %endif%
 %ifreason modnonsubposts%
-  ker niste naročnik poštnega seznama.
+  ker niste član poštnega seznama.
 %endif%
 
 (Sporočilo sledi.)

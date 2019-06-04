@@ -11,7 +11,7 @@ Content-Transfer-Encoding: 8bit
 %text prologue%
 
 %wrap%Z naslova <$posteraddr$> je na poštni seznam prispelo sporočilo z
-naslovom "$subject$". Za moderiranje ste zaprošeni, ker
+naslovom "$subject$". Za moderiranje ste naprošeni, ker
 %ifreason modnonsubposts%
   pošiljatelj ni naročnik seznama.
 %endif%
@@ -19,7 +19,7 @@ naslovom "$subject$". Za moderiranje ste zaprošeni, ker
   je razprava na poštnem seznamu moderirana.
 %endif%
 %ifreason access%
-  tako zahtevajo pravila o dostopanju.
+  tako zahtevajo pravila dostopanja.
 %endif%
 Sporočilo sledi spodaj.
 
