@@ -1,0 +1,45 @@
+Subject: Pozdravljeni na $list$@$domain$
+
+%text prologue%
+
+%wrap%
+%ifreason request%
+  Zahvaljujemo se za vašo prijavo.
+%endif%
+%ifreason confirm%
+  Potrdili ste svojo prijavo.
+%endif%
+%ifreason permit%
+  Nadzornik je odobril vašo prijavo.
+%endif%
+%ifreason switch%
+  Vaša prijava je bila spremenjena v
+  %iftype normal% običajno.%endif%
+  %iftype digest% prejemanje strnjenih prispevkov.%endif%
+  %iftype nomail% prijavo brez dostavljanja pošte.%endif%
+%else%
+  %ifreason admin%
+    Skrbnik vas je prijavil na
+  %else%
+    Prijavljeni ste bili na
+  %endif%
+  %iftype normal% poštni seznam.%endif%
+  %iftype digest% prejemanje strnjenih prispevkov poštnega seznama.%endif%
+  %iftype nomail% poštni seznam, vendar brez dostavljanja pošte.%endif%
+%endif%
+
+%wrap%Prijavljeni ste z naslovom <$subaddr$>.
+
+%ifcontrol closedlist%
+  %^%%wrap%Če se kadarkoli želite odjaviti, o tem obvestite skrbnika poštnega
+  seznama na naslov <$list+$owner@$domain$>.
+%else%
+  %^%%wrap%Če se kadarkoli želite odjaviti, s svojega elektronskega naslova
+  pošljite sporočilo na <$list+$unsubscribe@$domain$>. Naslov sporočila in
+  njegova vsebina nista pomembna. V odgovor boste prejeli potrditev odjave ali
+  nadaljnja navodila.
+%endif%
+
+%wrap%Za več informacij in pomoč glede tega poštnega seznama pošljite
+sporočilo na <$list+$help@$domain$>.
+

@@ -1,0 +1,40 @@
+%ifaction sub%Subject: Prijava na $list$@$domain$: $subaddr$%endif%
+%ifaction unsub%Subject: Odjava z $list$@$domain$: $subaddr$%endif%
+
+%text prologue%
+
+%ifaction sub%
+  %^%%wrap%Naslov <$subaddr$> je bil prijavljen na
+  %iftype normal% poštni seznam, %endif%
+  %iftype digest% prejemanje strnjenih prispevkov, %endif%
+  %iftype nomail% sodelovanje brez dostavljanja pošte, %endif%
+  %ifreason request%
+    ker smo prejeli prošnjo za prijavo.
+  %endif%
+  %ifreason confirm%
+    ker je bila prošnja za prijavo odobrena.
+  %endif%
+  %ifreason admin%
+    ker je tako odločil skrbnik.
+  %endif%
+  %ifreason permit%
+    ker je prijavo odobril nadzornik.
+  %endif%
+%endif%
+
+%ifaction unsub%
+  %^%%wrap%Naslov <$subaddr$> je bil odjavljen s poštnega seznama, ker
+  %ifreason request%
+    smo prejeli prošnjo za odjavo.
+  %endif%
+  %ifreason confirm%
+    ker je bila prošnja za odjavo odobrena.
+  %endif%
+  %ifreason admin%
+    ker je tako odločil skrbnik.
+  %endif%
+  %ifreason bouncing%
+    ker nanj predolgo ni bilo mogoče dostaviti pošte.
+  %endif%
+%endif%
+

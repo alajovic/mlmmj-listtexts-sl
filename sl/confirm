@@ -1,0 +1,52 @@
+%ifaction sub%Subject: Potrditev prijave na $list$@$domain$%endif%
+%ifaction unsub%Subject: Potrditev odjave z $list$@$domain$%endif%
+
+%text prologue%
+
+%ifaction sub%
+  %^%%wrap%
+  %ifreason admin%
+    Skrbnik poštnega seznama
+  %endif%
+  %ifreason request%
+    Nekdo (upamo, da ste bili to vi)
+  %endif%
+  je zaprosil, da se vaš elektronski naslov <$subaddr$> doda
+  %iftype normal%
+    na poštnegi seznam. Vsakokrat, ko boste poslali sporočilo na poštni
+    seznam, boste prejeli kopijo.
+  %endif%
+  %iftype digest%
+    prejemnike strnjenih prispevkov na poštnem seznamu. Prejemali boste po
+    več prispevkov v istem elektronskem sporočilu, bodisi v rednih časovnih
+    presledkih bodisi takrat, ko se jih bo nabralo dovolj.
+  %endif%
+  %iftype nomail%
+    na poštni seznam, vendar brez dostavljanja pošte. To pomeni, da ne boste
+    prejemali prispevkov, poslanih na seznam, še vedno pa štejete za
+    naročnika in zato nanj lahko pošiljate svoje prispevke. Prispevkom
+    drugih sledite preko spletnega arhiva ali drugega prijavljenega
+    elektronskega naslova.
+  %endif%
+%endif%
+
+%ifaction unsub%
+  %^%%wrap%
+  %ifreason admin%
+    Skrbnik poštnega seznama
+  %endif%
+  %ifreason request%
+    Nekdo (upamo, da ste bili to vi)
+  %endif%
+  je zaprosil, da se vaš elektronski naslov <$subaddr$> odstrani s poštnega
+  seznama.
+%endif%
+
+%wrap%Namero potrdite s pošiljanjem sporočila na <$confaddr$>, kar
+najlaže storite tako, da odgovorite na to obvestilo. Naslov sporočila in
+njegova vsebina nista pomembna.
+
+Po potrditvi boste prejeli obvestilo o uspešni izvedbi.
+
+Če tega ne želite storiti, zgolj prezrite to obvestilo.
+

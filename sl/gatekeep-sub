@@ -1,0 +1,18 @@
+Subject: Prošnja za prijavo na $list$@$domain$: $subaddr$
+
+%text prologue%
+
+%wrap%Z naslova <$subaddr$> je prispela prošnja za prijavo na
+%iftype normal% poštni seznam.%endif%
+%iftype digest% prejemanje strnjenih prispevkov poštnega seznama.%endif%
+%iftype nomail% poštni seznam (brez dostavljanja pošte).%endif%
+
+%wrap%Za odobritev prijave pošljite sporočilo na <$permitaddr$>, kar najlaže
+storite tako, da odgovorite na to obvestilo.
+
+%wrap%Če želite prijavo zavrniti, bodisi pošljite sporočilo na <$obstructaddr$>
+bodisi zgolj prezrite to obvestilo.
+
+To obvestilo so prejeli naslednji nadzorniki:
+- %gatekeepers%
+

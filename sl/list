@@ -1,0 +1,23 @@
+Subject: Seznam naročnikov na $list$@$domain$
+
+%text prologue%
+
+%wrap%Seznam naročnikov
+%iftype all%
+  (na vse različice poštnega seznama):
+%else%
+  %iftype normal% na običajno različico poštnega seznama:%endif%
+  %iftype digest% na prejemanje strnjenih sporočil:%endif%
+  %iftype nomail% brez dostavljanja pošte:%endif%
+%endif%
+
+%iftype all normal%
+  %^%- %listsubs%
+%endif%
+%iftype all digest%
+  %^%- %digestsubs%
+%endif%
+%iftype all nomail%
+  %^%- %nomailsubs%
+%endif%
+

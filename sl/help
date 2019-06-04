@@ -1,0 +1,84 @@
+Subject: Informacije o $list$@$domain$
+
+%text prologue%
+
+Informacije o poštnem seznamu.
+
+Prijavite se lahko na naslednje različice:
+
+- %wrap%Običajna različica: vsak prispevek s poštnega seznama prejmete v
+  ločenem sporočilu.
+%ifcontrol closedlist closedlistsub%
+  Za prijavo na to različico se obrnite na skrbnika.
+%else%
+  Za prijavo na to različico pošljite sporočilo na <$list+$subscribe@$domain$>.
+%endif%
+
+%ifncontrol nodigestsub%
+  %^%- %wrap%Različica s prejemanjem strnjenih prispevkov: prejemate po več
+    prispevkov v istem elektronskem sporočilu, bodisi v rednih časovnih
+    presledkih bodisi takrat, ko se jih nabere dovolj.
+  %ifcontrol closedlist closedlistsub%
+    Za prijavo na to različico se obrnite na skrbnika.
+  %else%
+    Za prijavo na to različico pošljite sporočilo na <$list+$subscribe-digest@$domain$>.
+  %endif%
+%endif%
+
+%ifncontrol nonomailsub%
+  %^%- %wrap%Različica brez dostavljanja pošte: s seznama ne prejemate
+  nobenih prispevkov, še vedno pa štejete za naročnika in zato nanj lahko
+  pošiljate svoje prispevke. Prispevkom drugih sledite preko spletnega
+  arhiva ali drugega prijavljenega elektronskega naslova.
+  %ifcontrol closedlist closedlistsub%
+  Za prijavo na to različico se obrnite na skrbnika.
+  %else%
+    Subscribe by emailing <$list+$subscribe-nomail@$domain$>.
+  %endif%
+%endif%
+
+%ifcontrol submod%
+  %^%%wrap%Nove prijave na ta poštni seznam morajo odobriti nadzorniki.
+%endif%
+
+%ifcontrol closedlist%
+  %^%%wrap%Za odjavo se obrnite na skrbnika.
+%else%
+  %^%%wrap%Za odjavo pošljite sporočilo na <$list+$unsubscribe@$domain$>.
+%endif%
+
+%wrap%V razpravi lahko sodelujete s pošiljanjem pošte na na <$list$@$domain$>.
+
+%ifcontrol subonlypost%%ifncontrol modnonsubposts%
+  %^%%wrap%Prispevke smejo na poštni seznam pošiljati le njegovi naročniki.
+%endif%%endif%
+
+%ifcontrol moderated%
+  %^%%wrap%Vsak prispevek mora pred objavo odobriti moderator.
+%else%
+  %ifcontrol subonlypost%%ifcontrol modnonsubposts%
+    %^%%wrap%Vsak prispevek z neprijavljenega naslova mora pred objavo
+    odobriti moderator.
+  %endif%%endif%
+%endif%
+
+%ifcontrol access%
+  %^%%wrap%Poštni seznam ima vzpostavljena pravila, ki določajo, kdo lahko
+  na njem objavlja in kateri prispevki morajo biti moderirani.
+%endif%
+
+%ifncontrol noget%%ifncontrol noarchive%
+  %^%%wrap%Iz arhiva lahko dobite sporočilo številka N tako, da pošljete
+  pošto na naslov <$list+$get-N@$domain$> (N je treba spremeniti v želeno
+  številko sporočila).
+  %ifcontrol subonlyget%
+    Takšen dostop do arhiva je odprt le za naročnike.
+  %endif%
+%endif%%endif%
+
+%wrap%Odgovore na pogosto zastavljana vprašanja lahko zahtevate tako, da
+pošljete sporočilo na <$list+$faq@$domain$>.
+
+%wrap%Na skrbnika se lahko obrnete preko poštnega naslova
+<$list+$owner@$domain$>.
+

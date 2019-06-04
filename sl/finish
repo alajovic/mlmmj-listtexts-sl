@@ -1,0 +1,53 @@
+%ifaction unsub%Subject: Nasvidenje: $list$@$domain$%endif%
+%ifaction release reject%Subject: Moderiranje $list$@$domain$: $subject$%endif%
+%ifaction permit obstruct%Subject: Nadzor $list$@$domain$: $subaddr$%endif%
+%ifaction post%Subject: Prispevek na $list$@$domain$: $subject$%endif%
+
+%text prologue%
+
+%ifaction unsub%
+  %^%%wrap%
+  %ifreason request%
+  %endif%
+  %ifreason confirm%
+    Potrdili ste odjavo s poštnega seznama.
+  %endif%
+  %ifreason admin%
+    Skrbnik vas je odjavil s poštnega seznama.
+  %else%
+    Odjavljeni ste s poštnega seznama.
+  %endif%
+%endif%
+
+%ifaction release%
+  %^%%wrap%Odobrili ste objavo prispevka <$posteraddr$> z naslovom
+  "$subject$".
+%endif%
+
+%ifaction reject%
+  %^%%wrap%Zavrnili ste objavo prispevka <$posteraddr$> z naslovom
+  "$subject$".
+%endif%
+
+%ifaction permit%
+  %^%%wrap%Odobrili ste prijavo <$subaddr$> na poštni seznam.
+%endif%
+
+%ifaction obstruct%
+  %^%%wrap%Zavrnili ste prijavo <$subaddr$> na poštni seznam.
+%endif%
+
+%ifaction post%
+  %^%%wrap%
+  %ifreason confirm%
+    Potrdili ste svoj prispevek z naslovom "$subject".
+  %endif%
+  %ifreason release%
+    Moderator je odobril vaš prispevek z naslovom "$subject".
+  %endif%
+  %ifreason request%
+    Hvala za vaš prispevek z naslovom "$subject".
+  %endif%
+  Prispevek bo poslan na poštni seznam.
+%endif%
+

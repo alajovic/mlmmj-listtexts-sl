@@ -1,0 +1,78 @@
+%ifaction sub%Subject: Prijava na $list$@$domain$ ni uspela%endif%
+%ifaction unsub%Subject: Odjava z $list$@$domain$ ni uspela%endif%
+%ifaction release reject%Subject: Moderiranje $list$@$domain$ ni uspelo%endif%
+%ifaction permit obstruct%Subject: Nadzor $list$@$domain$ ni uspel%endif%
+
+%text prologue%
+
+%ifaction sub%
+  %^%%wrap%Prijava na poštni seznam ni uspela,
+  %ifreason disabled%
+    ker je
+    %iftype normal% običajna različica poštnega seznama %endif%
+    %iftype digest% zgoščena različica poštnega seznama %endif%
+    %iftype nomail% različica poštnega seznama brez dostavljanja pošte %endif%
+    izklopljena.
+  %endif%
+  %ifreason closed%
+    ker se na ta poštni seznam ni mogoče prijaviti po pošti.
+  %endif%
+  %ifreason subbed%
+    ker ste nanj že prijavljeni.
+  %endif%
+  %ifreason expired%
+    ker je minilo preveč časa, odkar je nadzornik seznama dovolil vašo
+    prijavo.
+  %endif%
+  %ifreason obstruct%
+    ker je nadzornik seznama ni dovolil.
+  %endif%
+%endif%
+
+%ifaction unsub%
+  %^%%wrap%Odjava s poštnega seznama ni uspela,
+  %ifreason unsubbed%
+    ker nanj niste prijavljeni.
+
+    %^%%wrap%Če prejemate sporočila s poštnega seznama, ste morda nanj
+    prijavljeni z drugim elektronskim naslovom. Da to preverite, poglejte v
+    pozdravno sporočilo, ki ste ga prijeli ob prijavi, ali pa v vsebino
+    polja "Return-Path" v glavi kakega od sporočil, ki ste jih prejeli s
+    seznama.
+  %endif%
+%endif%
+
+%ifaction release reject%
+  %^%%wrap%
+  %ifaction release%
+    Odobritev navedenega prispevka ni uspela
+  %endif%
+  %ifaction reject%
+    Zavrnitev navedenega prispevka ni uspela
+  %endif%
+  %ifreason notfound%
+    ker ga ni bilo moč najti. Morda ga je že odobril ali zavrnil kateri od
+    drugih moderatorjev, ali pa je preteklo.
+  %endif%
+  %ifreason moderators%
+    ker niste moderator tega poštnega seznama.
+  %endif%
+%endif%
+
+%ifaction permit obstruct%
+  %^%%wrap%
+  %ifaction permit%
+    Odobritev navedene prijave ni uspela
+  %endif%
+  %ifaction obstruct%
+    Zavrnitev navedene prijave ni uspela
+  %endif%
+  %ifreason notfound%
+    ker je ni bilo moč najti. Morda jo je že odobril ali zavril kateri od
+    drugih nadzornikov, ali pa je pretekla.
+  %endif%
+  %ifreason gatekeepers%
+    ker niste nadzornik tega poštnega seznama.
+  %endif%
+%endif%
+

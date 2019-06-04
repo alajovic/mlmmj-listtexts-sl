@@ -1,0 +1,33 @@
+Subject: Prispevek čaka na objavo na $list$@$domain$: $subject$
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_$random0$$random1$_="
+Content-Transfer-Encoding: 8bit
+
+--=_$random0$$random1$_=
+Content-Type: text/plain; charset=utf8
+Content-Transfer-Encoding: 8bit
+
+%text prologue%
+
+%wrap%Na poštni seznam je z naslova <$posteraddr$> prispelo sporočilo z naslovom
+"$subject$. Njegovo objavo mora odobriti moderator, ker
+%ifreason moderated%
+  je razprava na tem poštnem seznamu moderirana.
+%endif%
+%ifreason access%
+  tako zahtevajo pravila za dostopanje.
+%endif%
+%ifreason modnonsubposts%
+  ker niste naročnik poštnega seznama.
+%endif%
+
+(Sporočilo sledi.)
+
+--=_$random0$$random1$_=
+Content-Type: message/rfc822
+Content-Transfer-Encoding: 8bit
+Content-Disposition: inline; filename="message.eml"
+
+%originalmail%
+--=_$random0$$random1$_=--

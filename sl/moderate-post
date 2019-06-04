@@ -1,0 +1,41 @@
+Subject: Prošnja za moderiranje $list$@$domain$: $subject$
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_$random0$$random1$_="
+Content-Transfer-Encoding: 8bit
+
+--=_$random0$$random1$_=
+Content-Type: text/plain; charset=utf8
+Content-Transfer-Encoding: 8bit
+
+%text prologue%
+
+%wrap%Z naslova <$posteraddr$> je na poštni seznam prispelo sporočilo z
+naslovom "$subject$". Za moderiranje ste zaprošeni, ker
+%ifreason modnonsubposts%
+  pošiljatelj ni naročnik seznama.
+%endif%
+%ifreason moderated%
+  je razprava na poštnem seznamu moderirana.
+%endif%
+%ifreason access%
+  tako zahtevajo pravila o dostopanju.
+%endif%
+Sporočilo sledi spodaj.
+
+%wrap%Objavo sporočila odobrite s pošiljanjem sporočila na naslov
+<$releaseaddr$>, kar najlaže storite tako, da odgovorite na to obvestilo.
+
+%wrap%Če želite objavo zavrniti, bodisi pošljite sporočilo na
+<$rejectaddr$> ali zgolj prezrite to obvestilo.
+
+To obvestilo so prejeli naslednji moderatorji:
+- %moderators%
+
+--=_$random0$$random1$_=
+Content-Type: message/rfc822
+Content-Transfer-Encoding: 8bit
+Content-Disposition: inline; filename="message.eml"
+
+%originalmail%
+--=_$random0$$random1$_=--

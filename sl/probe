@@ -1,0 +1,11 @@
+Subject: Nedostavljena sporočila s seznama $list$@$domain$
+
+%text prologue%
+
+Nekaterih sporočil s poštnega seznama vam ni bilo mogoče dostaviti. Če vas
+je to obvestilo doseglo, so se vmes stvari že povrnile v delujoče stanje in
+vam je bilo obvestilo poslano zgolj v vednost.
+
+Seznam nedostavljenih sporočil:
+- %bouncenumbers%
+

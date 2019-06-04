@@ -1,0 +1,64 @@
+Subject: Sporočilo z naslovom "$subject$" na $list$@$domain$ zavrnjeno
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="=_$random0$$random1$_="
+Content-Transfer-Encoding: 8bit
+
+--=_$random0$$random1$_=
+Content-Type: text/plain; charset=utf8
+Content-Transfer-Encoding: 8bit
+
+%text prologue%
+
+%wrap%Sporočila z <$posteraddr$> z naslovom "$subject$" ni bilo mogoče
+dostaviti na poštni seznam,
+%ifreason maxmailsize%
+  ker presega največjo dovoljeno velikost $maxmailsize$ zlogov.
+%endif%
+%ifreason tocc%
+  ker nobeno od polj To: ali Cc: ne vsebuje naslova poštnega seznama.
+%endif%
+%ifreason access%
+  zaradi pravil dostopa, ki jih je nastavil skrbnik.
+%endif%
+%ifreason expired%
+  ker ga moderatorji niso odobrili v potrebnem času.
+%endif%
+%ifreason reject%
+  ker ga je moderator zavrnil.
+%endif%
+%ifreason subonlypost%
+  ker niste njegov naročnik.
+
+  %ifcontrol closedlist closedlistsub%
+    %^%%wrap%Če se želite prijaviti, o tem obvestite skrbnika seznama na
+    naslov <$list+$owner@$domain$>
+  %endif%
+
+    %^%%wrap%Če menite, da ste med naročniki seznama, ste morda nanj
+    prijavljeni z drugim elektronskim naslovom. Da to preverite, poglejte v
+    pozdravno sporočilo, ki ste ga prijeli ob prijavi, ali pa v vsebino
+    polja "Return-Path" v glavi kakega od sporočil, ki ste jih prejeli s
+    seznama.
+%endif%
+%ifreason modonlypost%
+  ker niste moderator tega poštnega seznama.
+%endif%
+
+%ifreason maxmailsize%
+  %^%(Sledi začetek zavrnjenega sporočila.)
+%else%
+  %^%(Sledi zavrnjeno sporočilo.)
+%endif%
+
+--=_$random0$$random1$_=
+Content-Type: message/rfc822
+Content-Transfer-Encoding: 8bit
+Content-Disposition: inline; filename="message.eml"
+
+%ifreason maxmailsize%
+  %^%%originalmail 300%
+%else%
+  %^%%originalmail%
+%endif%
+--=_$random0$$random1$_=--
