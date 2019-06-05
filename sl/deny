@@ -1,18 +1,18 @@
 %ifaction sub%Subject: Prijava na $list$@$domain$ ni uspela%endif%
 %ifaction unsub%Subject: Odjava z $list$@$domain$ ni uspela%endif%
 %ifaction release reject%Subject: Moderiranje $list$@$domain$ ni uspelo%endif%
-%ifaction permit obstruct%Subject: Nadzor $list$@$domain$ ni uspel%endif%
+%ifaction permit obstruct%Subject: Nadzor nad $list$@$domain$ ni uspel%endif%
 
 %text prologue%
 
 %ifaction sub%
-  %^%%wrap%Prijava na poštni seznam ni uspela,
+  %^%%wrap%Ni vas bilo mogoče prijaviti na poštni seznam,
   %ifreason disabled%
-    ker je
+    ker
     %iftype normal% običajna različica poštnega seznama %endif%
     %iftype digest% zgoščena različica poštnega seznama %endif%
     %iftype nomail% različica poštnega seznama brez dostavljanja pošte %endif%
-    izklopljena.
+    ni omogočena.
   %endif%
   %ifreason closed%
     ker se na ta poštni seznam ni mogoče prijaviti po pošti.
@@ -30,7 +30,7 @@
 %endif%
 
 %ifaction unsub%
-  %^%%wrap%Odjava s poštnega seznama ni uspela,
+  %^%%wrap%Ni vas bilo mogoče odajviti s poštnega seznama,
   %ifreason unsubbed%
     ker nanj niste prijavljeni.
 

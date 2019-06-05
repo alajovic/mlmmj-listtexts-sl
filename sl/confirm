@@ -13,19 +13,19 @@
   %endif%
   je zaprosil, da se vaš elektronski naslov <$subaddr$> doda
   %iftype normal%
-    na poštnegi seznam. Vsakokrat, ko boste poslali sporočilo na poštni
+    na poštni seznam. Vsakokrat, ko bo kdo poslal sporočilo na poštni
     seznam, boste prejeli kopijo.
   %endif%
   %iftype digest%
-    prejemnike strnjenih prispevkov na poštnem seznamu. Prejemali boste po
+    med prejemnike strnjenih prispevkov na poštnem seznamu. Prejemali boste po
     več prispevkov v istem elektronskem sporočilu, bodisi v rednih časovnih
     presledkih bodisi takrat, ko se jih bo nabralo dovolj.
   %endif%
   %iftype nomail%
     na poštni seznam, vendar brez dostavljanja pošte. To pomeni, da ne boste
-    prejemali prispevkov, poslanih na seznam, še vedno pa štejete za
-    naročnika in zato nanj lahko pošiljate svoje prispevke. Prispevkom
-    drugih sledite preko spletnega arhiva ali drugega prijavljenega
+    prejemali prispevkov, poslanih na seznam, vseeno pa ste njegov član
+    in tako lahko nanj pošiljate svoje prispevke. Prispevkom
+    drugih lahko sledite preko spletnega arhiva ali drugega prijavljenega
     elektronskega naslova.
   %endif%
 %endif%

@@ -27,9 +27,9 @@ Prijavite se lahko na naslednje različice:
 
 %ifncontrol nonomailsub%
   %^%- %wrap%Različica brez dostavljanja pošte: s seznama ne prejemate
-  nobenih prispevkov, še vedno pa štejete za naročnika in zato nanj lahko
-  pošiljate svoje prispevke. Prispevkom drugih sledite preko spletnega
-  arhiva ali drugega prijavljenega elektronskega naslova.
+  nobenih prispevkov, vseeno pa ste njegov član in zato nanj lahko
+  pošiljate svoje prispevke. Prispevkom drugih lahko sledite preko spletnega
+  arhiva ali kakega drugega prijavljenega elektronskega naslova.
   %ifcontrol closedlist closedlistsub%
   Za prijavo na to različico se obrnite na skrbnika.
   %else%
@@ -47,10 +47,10 @@ Prijavite se lahko na naslednje različice:
   %^%%wrap%Za odjavo pošljite sporočilo na <$list+$unsubscribe@$domain$>.
 %endif%
 
-%wrap%V razpravi lahko sodelujete s pošiljanjem pošte na na <$list$@$domain$>.
+%wrap%V razpravi lahko sodelujete s pošiljanjem pošte na <$list$@$domain$>.
 
 %ifcontrol subonlypost%%ifncontrol modnonsubposts%
-  %^%%wrap%Prispevke smejo na poštni seznam pošiljati le njegovi naročniki.
+  %^%%wrap%Prispevke lahko na poštni seznam pošiljajo le njegovi naročniki.
 %endif%%endif%
 
 %ifcontrol moderated%
@@ -69,10 +69,10 @@ Prijavite se lahko na naslednje različice:
 
 %ifncontrol noget%%ifncontrol noarchive%
   %^%%wrap%Iz arhiva lahko dobite sporočilo številka N tako, da pošljete
-  pošto na naslov <$list+$get-N@$domain$> (N je treba spremeniti v želeno
-  številko sporočila).
+  pošto na naslov <$list+$get-N@$domain$> (N spremenite v
+  številko želenega sporočila).
   %ifcontrol subonlyget%
-    Takšen dostop do arhiva je odprt le za naročnike.
+    Tak dostop do arhiva je omogočen le članom.
   %endif%
 %endif%%endif%
 
